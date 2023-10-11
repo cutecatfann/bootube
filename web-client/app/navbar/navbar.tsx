@@ -22,16 +22,19 @@ function NavBar() {
   }, [] /* No dependencies, never rerun */);
 
 
-  return (
+    return (
     <nav className={styles.nav}>
-      <Link href="/">
-        <span className={styles.logoContainer}>
-          <img className={styles.logo} src="/youtube-logo.svg" alt="YouTube Logo" />
-        </span>
-      </Link>
-      <SignIn user={user} />
+        <Link href="/">
+        <Image width={90} height={20}
+            src="/youtube-logo.svg" alt="YouTube Logo"/>
+        </Link>
+        { 
+        user && <Upload />
+        }
+        <SignIn user={user} />
     </nav>
-  );
+    );
+
 }
 
 export default NavBar;
